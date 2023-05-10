@@ -1,0 +1,93 @@
+libplack-perl (1.0042-1) unstable; urgency=medium
+
+  [INCOMPATIBLE CHANGES]
+  - Fixes a mistake in the value of %D and %T in Accesslog::Timed middleware.
+    This is due to a bug in Apache::LogFormat::Compiler that sets a wrong
+    value for these fields. This bug has been fixed and now it emits what the
+    documentation has always said, in the same way as how Apache's log format
+    works.
+
+    However, this is a BREAKING CHANGE if you are using '%D' or '%T' in your
+    log formats, and you'll likely need to swap them if you need the same
+    values as previously. Read https://github.com/plack/Plack/issues/549 for
+    more details. (astj) #549, #551
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 22 Oct 2016 23:44:54 +0200
+
+libplack-perl (1.0029-1) unstable; urgency=low
+
+  [INCOMPATIBLE CHANGES]
+  - Split HTTP::Server::Simple handler from Plack distribution and merge to
+    HTTP-Server-Simple-PSGI distribution
+
+  In Debian, this is the package libhttp-server-simple-psgi-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 05 Oct 2013 14:09:31 +0200
+
+libplack-perl (1.0028-1) unstable; urgency=low
+
+  [INCOMPATIBLE CHANGES]
+  - use HTTP::Tiny in Plack::Test::Suite and Plack::Test::Server rather than
+    skipping it.
+  - No XS! Eliminates dependency to LWP::UserAgent by making it completely
+    optional for testing. If you run Plack::Test with Server implemenetation
+    or run Plack::Test::Suite (for PSGI handlers) without LWP installed, the
+    tests will automatically be skipped. This removes the eventual
+    sub-dependency to HTML::Parser, which is the only XS dependency in Plack.
+    #408
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 24 Jul 2013 19:36:23 +0200
+
+libplack-perl (1.0024-1) unstable; urgency=low
+
+  [INCOMPATIBLE CHANGES]
+  - Deleted lots of code, methods and warnings that have been deprecated since
+    0.99 (e.g. all of Plack::Server::*)
+  - plackup foo.psgi will not search the file in @INC anymore before the
+    current directory See https://github.com/plack/Plack/pull/343 for details
+  - Plack::Request changes the way it parses QUERY_STRING for valueless keys
+    such as "?a&b=1". Now "a" becomes part of query_parameters with empty
+    string as its value
+
+ -- Florian Schlichting <fsfs@debian.org>  Tue, 14 May 2013 22:10:16 +0200
+
+libplack-perl (0.9976-1) unstable; urgency=low
+
+  [INCOMPATIBLE CHANGES]
+  - builder {} now always returns a PSGI code reference, instead of
+    inconsistently returning URLMap object when mount() is used.
+    (reported by hoelzro)
+  - Plack::Runner now automatically calls ->parse_options() if it hasn't
+    been called, so the sane defaults for plackup can be applied.
+    (reported by arcanez)
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Wed, 13 Apr 2011 11:31:45 +0200
+
+libplack-perl (0.9973-1) unstable; urgency=low
+
+  WARNING: CHANGES WHICH MAY BREAK YOUR APPLICATIONS
+
+  In the past, Plack::Runner documentation provided a description of
+  how to make a PSGI application executable as a standalone script, by
+  recommending the use of the construct:
+
+    if (__FILE__ eq $0) { ... }
+
+  However, a change in Plack 0.9971 causes the $0 variable to now be
+  localized to a given .psgi path when evaluating it in Plack::Util's
+  load_psgi() routine. This fixes unexpected values and/or crashes
+  with Starman when your application uses the FindBin module.
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Wed, 02 Mar 2011 21:36:36 -0500
+libplack-perl (1.0028-1) unstable; urgency=low
+
+  [INCOMPATIBLE CHANGES]
+  - Deleted lots of code, methods and warnings that have been deprecated since
+    0.99 (e.g. all of Plack::Server::*)
+  - plackup foo.psgi will not search the file in @INC anymore before the
+    current directory See https://github.com/plack/Plack/pull/343 for details
+  - Plack::Request changes the way it parses QUERY_STRING for valueless keys
+    such as "?a&b=1". Now "a" becomes part of query_parameters with empty
+    string as its value
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 24 Jul 2013 19:36:23 +0200

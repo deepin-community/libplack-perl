@@ -2,3 +2,6 @@
 
 %:
 	dh $@
+
+override_dh_auto_test:
+	http_proxy= dh_auto_test
