@@ -1,15 +1,82 @@
-Source: template-repository
-Section: unknown
+Source: libplack-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Iñigo Tejedor Arrondo <poisonbit@gmail.com>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libapache-logformat-compiler-perl <!nocheck>,
+                     libauthen-simple-passwd-perl <!nocheck>,
+                     libcgi-compile-perl <!nocheck>,
+                     libcgi-emulate-psgi-perl <!nocheck>,
+                     libcgi-pm-perl <!nocheck>,
+                     libcookie-baker-perl <!nocheck>,
+                     libdevel-stacktrace-ashtml-perl <!nocheck>,
+                     libdevel-stacktrace-perl <!nocheck>,
+                     libfcgi-perl <!nocheck>,
+                     libfcgi-procmanager-perl <!nocheck>,
+                     libfile-sharedir-install-perl,
+                     libfile-sharedir-perl <!nocheck>,
+                     libfilesys-notify-simple-perl <!nocheck>,
+                     libhash-multivalue-perl <!nocheck>,
+                     libhttp-entity-parser-perl (>= 0.25) <!nocheck>,
+                     libhttp-headers-fast-perl <!nocheck>,
+                     libhttp-message-perl <!nocheck>,
+                     libhttp-request-ascgi-perl <!nocheck>,
+                     libhttp-tiny-perl <!nocheck>,
+                     libio-handle-util-perl <!nocheck>,
+                     liblog-dispatch-array-perl <!nocheck>,
+                     liblog-log4perl-perl <!nocheck>,
+                     libmime-types-perl <!nocheck>,
+                     libmodule-refresh-perl <!nocheck>,
+                     libstream-buffered-perl <!nocheck>,
+                     libtest-requires-perl <!nocheck>,
+                     libtest-tcp-perl <!nocheck>,
+                     libtry-tiny-perl <!nocheck>,
+                     liburi-perl <!nocheck>,
+                     libwww-form-urlencoded-perl <!nocheck>,
+                     libwww-perl <!nocheck>,
+                     perl
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libplack-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libplack-perl.git
+Homepage: https://metacpan.org/release/Plack
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libplack-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libapache-logformat-compiler-perl,
+         libcookie-baker-perl,
+         libdevel-stacktrace-ashtml-perl,
+         libdevel-stacktrace-perl,
+         libfile-sharedir-perl,
+         libfilesys-notify-simple-perl,
+         libhash-multivalue-perl,
+         libhttp-entity-parser-perl (>= 0.25),
+         libhttp-headers-fast-perl,
+         libhttp-message-perl,
+         libhttp-tiny-perl,
+         libstream-buffered-perl,
+         libtest-tcp-perl,
+         libtry-tiny-perl,
+         liburi-perl,
+         libwww-form-urlencoded-perl
+Recommends: libcgi-compile-perl,
+            libcgi-emulate-psgi-perl,
+            libfcgi-perl,
+            libfcgi-procmanager-perl,
+            liblog-dispatch-perl,
+            liblog-log4perl-perl,
+            libmodule-refresh-perl,
+            libwww-perl
+Description: interface between web servers and Perl web applications
+ Plack is a set of tools similar to Ruby's Rack or Python's Paste for WSGI. It
+ implements the Perl Server Gateway Interface (PSGI) standard interface, which
+ allows developers to decouple their web application framework from the local
+ web server environment.
+ .
+ This package contains middleware components, a reference server and utilities
+ for web application frameworks.

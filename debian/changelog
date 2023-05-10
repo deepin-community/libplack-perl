@@ -1,5 +1,494 @@
-template-repository (1.0-1) unstable; urgency=medium
+libplack-perl (1.0050-1) unstable; urgency=medium
 
-  * Initial release
+  * Import upstream version 1.0050.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- gregor herrmann <gregoa@debian.org>  Tue, 06 Sep 2022 20:27:47 +0200
+
+libplack-perl (1.0049-1) unstable; urgency=medium
+
+  * Import upstream version 1.0049.
+  * Update lintian override syntax.
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.6.1.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 02 Sep 2022 16:06:45 +0200
+
+libplack-perl (1.0048-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since stretch:
+    + Build-Depends-Indep: Drop versioned constraint on
+      libapache-logformat-compiler-perl, libcookie-baker-perl and
+      libtest-tcp-perl.
+    + libplack-perl: Drop versioned constraint on
+      libapache-logformat-compiler-perl, libcookie-baker-perl and
+      libtest-tcp-perl in Depends.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Thu, 30 Jun 2022 09:58:15 +0100
+
+libplack-perl (1.0048-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Submit.
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ gregor herrmann ]
+  * Import upstream version 1.0048.
+  * Update years of packaging copyright.
+  * Make (build) dependency on libhttp-entity-parser-perl versioned.
+  * Declare compliance with Debian Policy 4.5.1.
+  * Set Rules-Requires-Root: no.
+  * Bump debhelper-compat to 13.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 03 Dec 2020 16:37:39 +0100
+
+libplack-perl (1.0047-2) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * Drop build dependency on python.
+    Only needed for an optional test, and not yet ready for python3.
+    (Closes: #943095)
+  * Update years of packaging copyright.
+  * Annotate test-only build dependencies with <!nocheck>.
+  * Declare compliance with Debian Policy 4.4.1.
+  * Drop unneeded version constraints from (build) dependencies.
+  * Bump debhelper-compat to 12.
+  * debian/watch: use uscan version 4.
+  * Remove obsolete fields Name, Contact from debian/upstream/metadata.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 23 Oct 2019 16:56:43 +0200
+
+libplack-perl (1.0047-1) unstable; urgency=medium
+
+  * Import upstream version 1.0047.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 14 Feb 2018 21:40:41 +0100
+
+libplack-perl (1.0045-1) unstable; urgency=medium
+
+  [ Alex Muntada ]
+  * Remove inactive pkg-perl members from Uploaders.
+
+  [ gregor herrmann ]
+  * Import upstream version 1.0045.
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.1.3.
+  * Bump debhelper compatibility level to 10.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 01 Jan 2018 22:29:13 +0100
+
+libplack-perl (1.0044-1) unstable; urgency=medium
+
+  * Drop debian/tests/pkg-perl/smoke-tests, handled by pkg-perl-
+    autopkgtest now.
+  * Import upstream version 1.0044.
+    Fixes test failure with new Cookie::Baker, as seen on ci.debian.net.
+  * Drop spelling.patch, merged upstream.
+  * Update years of packaging copyright.
+  * Bump versioned (build) dependency on libtest-tcp-perl.
+  * Declare compliance with Debian Policy 4.1.0.
+  * Drop alternative (build) dependency on ancient libwww-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 27 Sep 2017 16:47:08 +0200
+
+libplack-perl (1.0042-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Remove Jonathan Yu from Uploaders. Thanks for your work!
+  * Import upstream version 1.0042.
+  * Update years of packaging copyright.
+  * Add a note about incompatible changes to debian/NEWS.
+  * Update (build) dependencies.
+  * autopkgtest: enable more smoke tests.
+  * Add lintian override for /usr/bin/plackup.
+  * Add a patch to fix a typo in the documentation.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 27 Oct 2016 00:57:04 +0200
+
+libplack-perl (1.0039-1) unstable; urgency=medium
+
+  * Import upstream version 1.0039.
+  * Drop version from libhttp-headers-fast-perl (build) dependency.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 07 Dec 2015 15:46:25 +0100
+
+libplack-perl (1.0038-1) unstable; urgency=medium
+
+  * Rename autopkgtest configuration file(s) as per new pkg-perl-
+    autopkgtest schema.
+  * Import upstream version 1.0038.
+  * Bump versioned (build) dependency on libhttp-headers-fast-perl.
+  * Bump debhelper compatibility level to 9.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 29 Nov 2015 16:11:41 +0100
+
+libplack-perl (1.0037-1) unstable; urgency=medium
+
+  * Import upstream version 1.0037.
+  * Bump versioned (build) dependency on libhttp-headers-fast-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 27 Jun 2015 16:48:50 +0200
+
+libplack-perl (1.0036-2) unstable; urgency=medium
+
+  * Add build dependency on CGI.pm.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 17 Jun 2015 23:03:03 +0200
+
+libplack-perl (1.0036-1) unstable; urgency=medium
+
+  * Import upstream version 1.0036.
+  * Add new (build) dependencies.
+  * Update years of packaging copyright.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 16 Jun 2015 00:36:41 +0200
+
+libplack-perl (1.0033-1) unstable; urgency=medium
+
+  * Import upstream version 1.0033
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 24 Oct 2014 23:05:02 +0200
+
+libplack-perl (1.0032-1) unstable; urgency=medium
+
+  * Add debian/upstream/metadata
+  * Import upstream version 1.0032
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 14 Oct 2014 23:05:38 +0200
+
+libplack-perl (1.0031-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ gregor herrmann ]
+  * debian/control: update {versioned,alternative} (build) dependencies.
+
+  [ Niko Tyni ]
+  * Declare the package autopkgtestable.
+
+ -- Niko Tyni <ntyni@debian.org>  Sat, 20 Sep 2014 12:38:11 +0300
+
+libplack-perl (1.0031-1) unstable; urgency=medium
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
+
+  [ Axel Beckert ]
+  * Remove Maximilian Gaß from Uploaders (no more active according to himself)
+
+  [ gregor herrmann ]
+  * New upstream release.
+    [SECURITY] Plack::App::File would previously strip trailing slashes off
+    provided paths. This could under specific circumstances lead to the
+    unintended delivery of files. For details cf. the upstream Changes file
+    and https://github.com/plack/Plack/pull/446 .
+  * Update years of packaging copyright.
+  * Make build dependency on libfile-sharedir-install-perl versioned.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 03 Aug 2014 17:45:20 +0200
+
+libplack-perl (1.0030-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 25 Dec 2013 21:08:32 +0100
+
+libplack-perl (1.0029-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update build and runtime dependencies.
+  * Update years of packaging copyright.
+  * Add note to debian/NEWS that Plack::Handler::HTTP::Server::Simple
+    moved to libhttp-server-simple-psgi-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 05 Oct 2013 14:15:24 +0200
+
+libplack-perl (1.0028-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/rules: unset http_proxy for tests.
+  * Update (build) dependencies.
+  * Update debian/NEWS.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 24 Jul 2013 19:38:37 +0200
+
+libplack-perl (1.0024-1) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * debian/control: update {versioned,alternative} (build) dependencies.
+
+  [ Alessandro Ghedini ]
+  * (Build) depend on libhttp-message-perl | libwww-perl (<< 6.0) to make
+    backporting a little bit easier
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ Florian Schlichting ]
+  * Import Upstream version 1.0024
+  * Refresh d/copyright (years, no more M::I)
+  * Bump Standards-Version to 3.9.4 (no change)
+  * Update (build-)dependencies
+  * Add NEWS entry about major incompatible changes
+
+  [ gregor herrmann ]
+  * The new upstream version als fixes "FTBFS: tests failed"
+    (Closes: #713233)
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 22 Jun 2013 16:16:40 +0200
+
+libplack-perl (0.9989-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Sat, 23 Jun 2012 14:33:24 +0200
+
+libplack-perl (0.9988-1) unstable; urgency=low
+
+  * New upstream release
+  * Move libcgi-compile-perl and libcgi-emulate-psgi-perl to Recommends
+    (Closes: #670838)
+  * Build depends on python to enable more tests
+
+ -- Alessandro Ghedini <ghedo@debian.org>  Fri, 11 May 2012 18:12:53 +0200
+
+libplack-perl (0.9986-2) unstable; urgency=low
+
+  [ Alessandro Ghedini ]
+  * Email change: Alessandro Ghedini -> ghedo@debian.org
+
+  [ gregor herrmann ]
+  * Add libcgi-compile-perl to Build-Depends-Indep, add
+    libcgi-emulate-psgi-perl, libcgi-compile-perl to Depends (needed by
+    Plack::App::WrapCGI).
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 12 Apr 2012 22:33:43 +0200
+
+libplack-perl (0.9986-1) unstable; urgency=low
+
+  * New upstream release
+  * Update debian/copyright format as in Debian Policy 3.9.3
+  * Bump Standards-Version to 3.9.3
+  * Update copyright years for inc/Module/*
+  * Update packaging copyright years
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Fri, 16 Mar 2012 13:38:31 +0100
+
+libplack-perl (0.9985-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Tue, 01 Nov 2011 16:28:34 +0100
+
+libplack-perl (0.9984-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Mon, 03 Oct 2011 22:10:31 +0200
+
+libplack-perl (0.9983-1) unstable; urgency=low
+
+  [ Alessandro Ghedini ]
+  * New upstream release
+
+  [ gregor herrmann ]
+  * Unconditionally (build) depend on perl (>= 5.10.1) to get
+    Pod::Usage 1.36.
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Tue, 27 Sep 2011 23:05:06 +0200
+
+libplack-perl (0.9982-1) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Alessandro Ghedini ]
+  * New upstream release
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Tue, 02 Aug 2011 16:38:10 +0200
+
+libplack-perl (0.9980-1) unstable; urgency=low
+
+  * New upstream release
+  * Add libhttp-message-perl to (Build-)Depends(-Indep)
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Tue, 07 Jun 2011 12:09:46 +0200
+
+libplack-perl (0.9979-1) unstable; urgency=low
+
+  [ Alessandro Ghedini ]
+  * New upstream release
+  * Bump Standards-Version to 3.9.2 (no changes needed)
+
+  [ gregor herrmann ]
+  * Update years of copyright for inc/Module/*.
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Wed, 18 May 2011 20:03:43 +0200
+
+libplack-perl (0.9976-1) unstable; urgency=low
+
+  * New upstream release
+  * Update debian/NEWS with incompatible changes
+  * Add libcgi-emulate-psgi-perl and libio-handle-util-perl to B-D-I
+
+ -- Alessandro Ghedini <al3xbio@gmail.com>  Wed, 13 Apr 2011 11:44:49 +0200
+
+libplack-perl (0.9974-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 05 Mar 2011 19:30:03 -0500
+
+libplack-perl (0.9973-1) unstable; urgency=low
+
+  [ Maximilian Gass ]
+  * New upstream release
+  * Remove fix-pod-spelling.patch, has been applied upstream
+  * Add myself to Uploaders
+
+  [ Jonathan Yu ]
+  * New upstream release
+  * Bump to debhelper compat 8
+  * Add NEWS file describing incompatible changes
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Wed, 02 Mar 2011 21:36:42 -0500
+
+libplack-perl (0.9969-1) unstable; urgency=low
+
+  * New upstream release
+
+  [ Jonathan Yu ]
+  * Move eloy's copyright back to debian/* (somehow it landed in
+    the clause for inc/Module/*)
+  * Add patch to fix minor typo
+
+  [ gregor herrmann ]
+  * Make (build) dependency on libdevel-stacktrace-ashtml-perl versioned.
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 19 Feb 2011 12:45:12 -0500
+
+libplack-perl (0.9963-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release 0.9960
+  * Update dependencies per upstream
+
+  [ Alessandro Ghedini ]
+  * New upstream release 0.9963
+
+  [ gregor herrmann ]
+  * Add perl (>= 5.10.1) as an alternative (build) dependency for
+    libparent-perl.
+  * Add liblog-dispatch-array-perl to Build-Depends-Indep.
+  * Bump (build) dependency on liburi-perl to >= 1.58, 1.57 broke Plack.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 23 Jan 2011 17:43:56 +0100
+
+libplack-perl (0.9951-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 13 Nov 2010 23:36:08 +0100
+
+libplack-perl (0.9950-1) unstable; urgency=low
+
+  * New upstream release
+    + Fix bug in App::Directory URL generation (escaping)
+  * Use "Debian systems" in d/copyright
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sun, 03 Oct 2010 11:05:18 -0400
+
+libplack-perl (0.9949-1) unstable; urgency=low
+
+  * New upstream release
+  * Added me to Uploaders
+
+ -- Krzysztof Krzyżaniak (eloy) <eloy@debian.org>  Mon, 20 Sep 2010 15:17:11 +0200
+
+libplack-perl (0.9945-1) unstable; urgency=low
+
+  [ Iñigo Tejedor Arrondo ]
+  * New upstream release.
+  * Add myself to Uploaders.
+  * Update debian/copyright to refer to the file 'GPL-1' rather than 'GPL'
+  * Bump Standards-Version in debian/control to latest version (3.9.1)
+
+  [ gregor herrmann ]
+  * Remove version from libdevel-stacktrace-ashtml-perl (build) dependency,
+    there's nothing older in the archive.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 28 Aug 2010 00:55:13 +0200
+
+libplack-perl (0.9941-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 11 Jul 2010 21:14:39 +0200
+
+libplack-perl (0.9940-1) unstable; urgency=low
+
+  * New upstream release.
+  * Set Standards-Version to 3.9.0 (no changes).
+  * Remove Test::More from runtime dependencies.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 05 Jul 2010 22:38:18 +0200
+
+libplack-perl (0.9938-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add /me to Uploaders.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 24 May 2010 18:19:46 +0200
+
+libplack-perl (0.9937-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+  * Now test with Module::Refresh during build
+
+  [ gregor herrmann ]
+  * New runtime dependencies: Test::More: 0.88, Test::Requires: 0
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 15 May 2010 09:15:52 -0400
+
+libplack-perl (0.9935-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 06 May 2010 10:20:43 -0400
+
+libplack-perl (0.9934-1) unstable; urgency=low
+
+  * New upstream release
+  * Note that upstream considers the same copyright
+    information and license to apply for binaries
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Wed, 05 May 2010 15:02:33 -0400
+
+libplack-perl (0.9931-1) unstable; urgency=low
+
+  * New upstream release
+  * Test::TCP is required for Plack::Test, so install it for users
+  * Remove patches as they were applied upstream
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sun, 18 Apr 2010 23:15:27 -0400
+
+libplack-perl (0.9929-1) unstable; urgency=low
+
+  * Initial Release (Closes: #576907)
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 08 Apr 2010 22:06:27 -0400
